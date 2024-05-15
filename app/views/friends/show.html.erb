@@ -1,0 +1,76 @@
+<p style="color: green"><%= notice %></p>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-4">
+      Hello, 
+      <%= @friend.first_name%>
+      <%= @friend.last_name%>
+    </h1>
+      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content
+          or information.</p>
+    <hr class="my-4">
+      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      <p class="lead">
+        <%= link_to "Edit ", edit_friend_path(@friend) , class:"btn btn-secondary btn-lg rounded-2"%>  
+        <%= link_to "Back ", friends_path, class:"btn btn-secondary btn-lg rounded-2" %>
+      </p>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= label_tag 'first_name', 'First Name:' %>
+      <%= text_field_tag 'name', @friend.first_name, class: 'form-control', disabled: true %>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= label_tag 'last_name', 'Last Name:' %>
+      <%= text_field_tag 'last_name', @friend.last_name, class: 'form-control', disabled: true %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= label_tag 'email', 'E-mail:' %>
+      <%= text_field_tag 'email', @friend.email, class: 'form-control', disabled: true %>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= label_tag 'phone', 'Phone:' %>
+      <%= email_field_tag 'phone', @friend.phone, class: 'form-control', disabled: true %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+<div class="col-md-6">
+<div class="form-group">
+  <%= label_tag 'occupation', 'Occupation' %>
+  <%= text_field_tag 'occupation', @friend.occupation, class: 'form-control', disabled: true %>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="form-group">
+  <%= label_tag 'address', 'Address:' %>
+  <%= text_field_tag 'address', @friend.address, class: 'form-control', disabled: true %>
+</div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12 mt-2">
+    <%= link_to 'Edit', edit_friend_path(@friend), class:"btn btn-secondary" %>
+    <%= link_to 'Delete', @friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+    <%= link_to 'Back', friends_path, class:"btn btn-dark" %>
+  </div>
+</div>
